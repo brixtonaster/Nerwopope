@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "@rainbow-me/rainbowkit/styles.css";
+
+@theme {
+  --color-cream: #FAF6EE;
+  --color-cream-dark: #F1E9D8;
+  --color-cream-border: #E2D7C0;
+  --color-forest: #163828;
+  --color-forest-deep: #0F271C;
+  --color-forest-mid: #1F4D38;
+  --color-sunflower: #F2B705;
+  --color-sunflower-hover: #DDA400;
+  --color-leaf: #2D6A4F;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #FAF6EE;
+    color: #163828;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nerwopope</title>
+    <script>
+      (function () {
+        try {
+          var targets = [window, Object.getPrototypeOf(window)];
+          for (var i = 0; i < targets.length; i++) {
+            var target = targets[i];
+            if (!target) continue;
+            var desc = Object.getOwnPropertyDescriptor(target, 'fetch');
+            if (desc && desc.get && !desc.set && desc.configurable) {
+              Object.defineProperty(target, 'fetch', {
+                configurable: true,
+                enumerable: desc.enumerable !== false,
+                get: desc.get,
+                set: function (val) {
+                  if (this !== window && this !== target) {
+                    Object.defineProperty(this, 'fetch', {
+                      value: val,
+                      writable: true,
+                      configurable: true,
+                      enumerable: true,
+                    });
+                  }
+                },
+              });
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="description" content="Nerwopope is a small independent match fund tool built on Arc." />
+    <meta property="og:title" content="Nerwopope" />
+    <meta property="og:description" content="A one for one match fund tool built on Arc." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#FAF6EE] text-[#163828] antialiased selection:bg-[#F2B705] selection:text-[#0F271C]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

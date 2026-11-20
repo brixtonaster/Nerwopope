@@ -1,0 +1,6 @@
+{
+  "name": "Nerwopope",
+  "description": "A one for one match fund tool built on Arc",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
